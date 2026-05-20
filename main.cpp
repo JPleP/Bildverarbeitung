@@ -104,12 +104,15 @@ int main(int argc, char** argv )
     
         auto inf_prev = std::chrono::system_clock::now();
         
-        
+        //Get all the boxes of the system
         std::vector<BBox> boxes = detector.GetBBoxes(detector.GetData(frame));
         NMS::NMS(boxes, 0.5);
 
         std::vector<Keypoint> keypoints;
         if(boxes.size() > 0){
+            cv::Rect roi;
+            
+
             cv::Rect roi(boxes[0]._lt.x,boxes[0]._lt.y,boxes[0]._br.x,boxes[0]._br.y);
             keypoints = estimator.GetData(frame(roi));
         }
