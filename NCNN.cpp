@@ -1,4 +1,4 @@
-#include "NCNNDet.h"
+#include "NCNN.h"
 
 #include "mat.h"
 #include <algorithm>
@@ -13,7 +13,8 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 #include "iostream"
-
+#include "net.h"
+#include "utils.h"
 
 
 static float Get(const ncnn::Mat& matrix, int width, int height, int channel = 0){
@@ -32,7 +33,7 @@ static float Get(const ncnn::Mat& matrix, int width, int height, int channel = 0
 
 
 
-NCNNDet::NCNNDet(const char* paramFile, const char* binFile,int width, int height):
+NCNN::NCNN(const char* paramFile, const char* binFile,int width, int height):
 _width(width),_height(height)
 //Simple trick to get the variable as class member without using smart pointers oder oder STL
 {
@@ -55,14 +56,7 @@ _width(width),_height(height)
     _net.load_model(binFile);
 }
 
-
-static float sigmoid(float z){
-
-    return 1.0f / (1.0f + std::exp(-z));
-}
-
-std::vector<ncnn::Mat> NCNNDet::GetData(cv::Mat frame){
-
+ncnn::Extractor NCNN::PrepareInput(const cv::Mat& frame){
     // Prepare input data
     cv::Mat readyFrame;
     {
@@ -73,16 +67,27 @@ std::vector<ncnn::Mat> NCNNDet::GetData(cv::Mat frame){
         cv::Mat smallFrame;
         cv::resize(frame, smallFrame, cv::Size(), scale, scale, cv::INTER_AREA);
 
+        
+        assert(smallFrame.cols <= _width);
+        assert(smallFrame.rows <= _height);
         int top = 0, bottom = 0, left = 0, right = 0;
-        assert(smallFrame.cols <= 320);
-        assert(smallFrame.rows <= 320);
-        if(smallFrame.cols < 320){
-            left = (320 - smallFrame.cols)/2;
-            right = (320 - smallFrame.cols)/2 + (320 - smallFrame.cols)%2;
+        if(smallFrame.cols < _width){
+            left = (_width - smallFrame.cols)/2;
+            right = (_width - smallFrame.cols)/2 + (_width - smallFrame.cols)%2;
+            _rescale_x = (float)_width/ ((float)_width - (float)(left + right));
+            _shift_x = (float)left/(float)_width;
+        } else {
+            _rescale_x = 1.0f;
+            _shift_x = 0.0f;
         }
-        if(smallFrame.rows < 320){
-            top = (320 - smallFrame.rows)/2;
-            bottom = (320 - smallFrame.rows)/2 + (320 - smallFrame.rows)%2;
+        if(smallFrame.rows < _height){
+            top = (_height - smallFrame.rows)/2;
+            bottom = (_height - smallFrame.rows)/2 + (_height - smallFrame.rows)%2;
+            _rescale_y = (float)_height/ ((float)_height - (float)(top + bottom));
+            _shift_y = (float)top/(float)_height;
+        }else {
+            _rescale_y = 1.0f;
+            _shift_y = 0.0f;
         }
         
         cv::copyMakeBorder(smallFrame, readyFrame, top, bottom, left, right, cv::BORDER_DEFAULT);
@@ -101,7 +106,34 @@ std::vector<ncnn::Mat> NCNNDet::GetData(cv::Mat frame){
     ncnn::Extractor ex = _net.create_extractor();
     //Do a forward pass
     ex.input("in0", in);
+
+    return ex;
+}
+
+
+
+
+
+static float sigmoid(float z){
+
+    return 1.0f / (1.0f + std::exp(-z));
+}
+
+BBox NCNNDet::Idx2BBox(const ncnn::Mat& matrix, int x, int y, float stride){
     
+    //For some reason, probably due to the conversion process, the deltas are in pixel space of the input image.
+    
+
+    //Convert the deltas to bounding boxes in normalized coordinates
+    BBox top;
+    top._lt.x = (((float)x + 0.5f) * (float)stride - Get(matrix,x, y, 0) / (float)_width    - _shift_x)*_rescale_x; 
+    top._lt.y = (((float)y + 0.5f) * (float)stride - Get(matrix,x, y, 1) / (float)_height   - _shift_y)*_rescale_y; 
+    top._br.x = (((float)x + 0.5f) * (float)stride + Get(matrix,x, y, 2) / (float)_width    - _shift_x)*_rescale_x;
+    top._br.y = (((float)y + 0.5f) * (float)stride + Get(matrix,x, y, 3) / (float)_height   - _shift_y)*_rescale_y;
+    return top;
+}
+
+std::vector<BBox> NCNNDet::GetData(ncnn::Extractor ex,const float& threshold){
     
     ncnn::Mat out0, out1, out2, out3, out4, out5;  
     //Get the result of the forward pass
@@ -126,28 +158,8 @@ std::vector<ncnn::Mat> NCNNDet::GetData(cv::Mat frame){
 
     //The first three output (out0, out1, out2) represet the logits result of an object centered at that location.
     //We assume the other three outputs (out3, out4, out5) represent the distance from the grid center to sides of the bbox left,top, right,bottom
-    return {out0,out3, out1, out4,out2, out5};
-}
+    std::vector<ncnn::Mat> tensors {out0,out3, out1, out4,out2, out5};
 
-
-
-
-static BBox Idx2BBox(const ncnn::Mat& matrix, int x, int y, float stride, float width, float height){
-    
-    //For some reason, probably due to the conversion process, the deltas are in pixel space of the input image.
-    
-
-    //Convert the deltas to bounding boxes in normalized coordinates
-    BBox top;
-    top._lt.x = ((float)x + 0.5f) * (float)stride - Get(matrix,x, y, 0) / (float)width; 
-    top._lt.y = ((float)y + 0.5f) * (float)stride - Get(matrix,x, y, 1) / (float)height; 
-    top._br.x = ((float)x + 0.5f) * (float)stride + Get(matrix,x, y, 2) / (float)width;  
-    top._br.y = ((float)y + 0.5f) * (float)stride + Get(matrix,x, y, 3) / (float)height;
-    return top;
-}
-
-
-std::vector<BBox> NCNNDet::GetBBoxes(const std::vector<ncnn::Mat> &tensors, const float& threshold){
     //Get all Boxes from the layers. It is assumed, that always will be [cls, reg_box, cls, ...]
 
     std::vector<BBox> boxes;
@@ -163,7 +175,7 @@ std::vector<BBox> NCNNDet::GetBBoxes(const std::vector<ncnn::Mat> &tensors, cons
                 //Discard if below threshold
                 if(prob >= threshold){
                     //Convert the deltas to a Bounding Box
-                    BBox obj = Idx2BBox(tensors[i+1],x, y, stride, _width, _height);
+                    BBox obj = Idx2BBox(tensors[i+1],x, y, stride);
                     boxes.push_back(obj);
                 }
             }
@@ -172,4 +184,59 @@ std::vector<BBox> NCNNDet::GetBBoxes(const std::vector<ncnn::Mat> &tensors, cons
     
     
     return boxes;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+std::vector<Keypoint> NCNNPose::GetData(ncnn::Extractor ex){
+    
+    ncnn::Mat out0, out1, out2, out3, out4, out5;  
+    //Get the result of the forward pass
+    if(ex.extract("out0", out0) != 0){
+        std::cerr<<"Could not extract out0\n";
+    }
+    if(ex.extract("out1", out1) != 0){
+        std::cerr<<"Could not extract out1\n";
+    }
+
+    //Process the x points
+    //The height component defines the amount of keypoints
+    std::vector<Keypoint> keypoints(out0.h, Keypoint{0,0,0,0});
+
+    for(int feat = 0; feat < out0.h; ++feat){
+        Keypoint& feature = keypoints[feat];
+        //Iterate through all possible coordinates
+        for(int coord = 0; coord < out0.w; ++coord){
+            if(float currProb = Get(out0, coord, feat); currProb > feature.prob_x){
+                feature.x = coord;
+                feature.prob_x = currProb;
+            }
+        }
+        //Normalize the value of each coordinate.
+        feature.x = ((float)feature.x / (float)out0.h - _shift_x)*_rescale_x;
+    }
+    for(int feat = 0; feat < out1.h; ++feat){
+        Keypoint& feature = keypoints[feat];
+        //Iterate through all possible coordinates
+        for(int coord = 0; coord < out1.w; ++coord){
+            if(float currProb = Get(out1, coord, feat); currProb > feature.prob_y){
+                feature.y = coord;
+                feature.prob_y = currProb;
+            }
+        }
+        //Normalize the value of each coordinate.
+        feature.y = ((float)feature.y / (float)out1.w - _shift_y)*_rescale_y;
+    }
+
+
+    return keypoints;
 }

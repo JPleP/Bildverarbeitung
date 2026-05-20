@@ -11,6 +11,6 @@ struct BBox{
 
 // Struct to hold final coordinate results
 struct Keypoint {
-    float x;
-    float y;
+    float x; float prob_x;
+    float y; float prob_y;
 };

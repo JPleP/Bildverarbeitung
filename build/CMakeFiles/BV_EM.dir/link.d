@@ -4,8 +4,7 @@ BV_EM: \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtoffloadbegin.o \
   CMakeFiles/BV_EM.dir/main.cpp.o \
-  CMakeFiles/BV_EM.dir/NCNNDet.cpp.o \
-  CMakeFiles/BV_EM.dir/NCNNPose.cpp.o \
+  CMakeFiles/BV_EM.dir/NCNN.cpp.o \
   CMakeFiles/BV_EM.dir/NMS.cpp.o \
   /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/lib/libncnn.a \
   /usr/local/lib/libopencv_gapi.so.4.14.0 \
@@ -274,9 +273,7 @@ BV_EM: \
 
 CMakeFiles/BV_EM.dir/main.cpp.o:
 
-CMakeFiles/BV_EM.dir/NCNNDet.cpp.o:
-
-CMakeFiles/BV_EM.dir/NCNNPose.cpp.o:
+CMakeFiles/BV_EM.dir/NCNN.cpp.o:
 
 CMakeFiles/BV_EM.dir/NMS.cpp.o:
 

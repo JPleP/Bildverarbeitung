@@ -86,38 +86,24 @@ CMakeFiles/BV_EM.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BV_EM.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/main.cpp -o CMakeFiles/BV_EM.dir/main.cpp.s
 
-CMakeFiles/BV_EM.dir/NCNNDet.cpp.o: CMakeFiles/BV_EM.dir/flags.make
-CMakeFiles/BV_EM.dir/NCNNDet.cpp.o: /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNDet.cpp
-CMakeFiles/BV_EM.dir/NCNNDet.cpp.o: CMakeFiles/BV_EM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BV_EM.dir/NCNNDet.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BV_EM.dir/NCNNDet.cpp.o -MF CMakeFiles/BV_EM.dir/NCNNDet.cpp.o.d -o CMakeFiles/BV_EM.dir/NCNNDet.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNDet.cpp
+CMakeFiles/BV_EM.dir/NCNN.cpp.o: CMakeFiles/BV_EM.dir/flags.make
+CMakeFiles/BV_EM.dir/NCNN.cpp.o: /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.cpp
+CMakeFiles/BV_EM.dir/NCNN.cpp.o: CMakeFiles/BV_EM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BV_EM.dir/NCNN.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BV_EM.dir/NCNN.cpp.o -MF CMakeFiles/BV_EM.dir/NCNN.cpp.o.d -o CMakeFiles/BV_EM.dir/NCNN.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.cpp
 
-CMakeFiles/BV_EM.dir/NCNNDet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BV_EM.dir/NCNNDet.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNDet.cpp > CMakeFiles/BV_EM.dir/NCNNDet.cpp.i
+CMakeFiles/BV_EM.dir/NCNN.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BV_EM.dir/NCNN.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.cpp > CMakeFiles/BV_EM.dir/NCNN.cpp.i
 
-CMakeFiles/BV_EM.dir/NCNNDet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BV_EM.dir/NCNNDet.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNDet.cpp -o CMakeFiles/BV_EM.dir/NCNNDet.cpp.s
-
-CMakeFiles/BV_EM.dir/NCNNPose.cpp.o: CMakeFiles/BV_EM.dir/flags.make
-CMakeFiles/BV_EM.dir/NCNNPose.cpp.o: /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNPose.cpp
-CMakeFiles/BV_EM.dir/NCNNPose.cpp.o: CMakeFiles/BV_EM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BV_EM.dir/NCNNPose.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BV_EM.dir/NCNNPose.cpp.o -MF CMakeFiles/BV_EM.dir/NCNNPose.cpp.o.d -o CMakeFiles/BV_EM.dir/NCNNPose.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNPose.cpp
-
-CMakeFiles/BV_EM.dir/NCNNPose.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BV_EM.dir/NCNNPose.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNPose.cpp > CMakeFiles/BV_EM.dir/NCNNPose.cpp.i
-
-CMakeFiles/BV_EM.dir/NCNNPose.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BV_EM.dir/NCNNPose.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNPose.cpp -o CMakeFiles/BV_EM.dir/NCNNPose.cpp.s
+CMakeFiles/BV_EM.dir/NCNN.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BV_EM.dir/NCNN.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.cpp -o CMakeFiles/BV_EM.dir/NCNN.cpp.s
 
 CMakeFiles/BV_EM.dir/NMS.cpp.o: CMakeFiles/BV_EM.dir/flags.make
 CMakeFiles/BV_EM.dir/NMS.cpp.o: /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp
 CMakeFiles/BV_EM.dir/NMS.cpp.o: CMakeFiles/BV_EM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BV_EM.dir/NMS.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BV_EM.dir/NMS.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BV_EM.dir/NMS.cpp.o -MF CMakeFiles/BV_EM.dir/NMS.cpp.o.d -o CMakeFiles/BV_EM.dir/NMS.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp
 
 CMakeFiles/BV_EM.dir/NMS.cpp.i: cmake_force
@@ -131,16 +117,14 @@ CMakeFiles/BV_EM.dir/NMS.cpp.s: cmake_force
 # Object files for target BV_EM
 BV_EM_OBJECTS = \
 "CMakeFiles/BV_EM.dir/main.cpp.o" \
-"CMakeFiles/BV_EM.dir/NCNNDet.cpp.o" \
-"CMakeFiles/BV_EM.dir/NCNNPose.cpp.o" \
+"CMakeFiles/BV_EM.dir/NCNN.cpp.o" \
 "CMakeFiles/BV_EM.dir/NMS.cpp.o"
 
 # External object files for target BV_EM
 BV_EM_EXTERNAL_OBJECTS =
 
 BV_EM: CMakeFiles/BV_EM.dir/main.cpp.o
-BV_EM: CMakeFiles/BV_EM.dir/NCNNDet.cpp.o
-BV_EM: CMakeFiles/BV_EM.dir/NCNNPose.cpp.o
+BV_EM: CMakeFiles/BV_EM.dir/NCNN.cpp.o
 BV_EM: CMakeFiles/BV_EM.dir/NMS.cpp.o
 BV_EM: CMakeFiles/BV_EM.dir/build.make
 BV_EM: CMakeFiles/BV_EM.dir/compiler_depend.ts
@@ -160,7 +144,7 @@ BV_EM: /usr/local/lib/libopencv_flann.so.4.14.0
 BV_EM: /usr/local/lib/libopencv_imgproc.so.4.14.0
 BV_EM: /usr/local/lib/libopencv_core.so.4.14.0
 BV_EM: CMakeFiles/BV_EM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable BV_EM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable BV_EM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BV_EM.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

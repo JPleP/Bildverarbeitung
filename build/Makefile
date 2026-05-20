@@ -129,53 +129,29 @@ BV_EM/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/build
 .PHONY : BV_EM/fast
 
-NCNNDet.o: NCNNDet.cpp.o
-.PHONY : NCNNDet.o
+NCNN.o: NCNN.cpp.o
+.PHONY : NCNN.o
 
 # target to build an object file
-NCNNDet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNNDet.cpp.o
-.PHONY : NCNNDet.cpp.o
+NCNN.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNN.cpp.o
+.PHONY : NCNN.cpp.o
 
-NCNNDet.i: NCNNDet.cpp.i
-.PHONY : NCNNDet.i
-
-# target to preprocess a source file
-NCNNDet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNNDet.cpp.i
-.PHONY : NCNNDet.cpp.i
-
-NCNNDet.s: NCNNDet.cpp.s
-.PHONY : NCNNDet.s
-
-# target to generate assembly for a file
-NCNNDet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNNDet.cpp.s
-.PHONY : NCNNDet.cpp.s
-
-NCNNPose.o: NCNNPose.cpp.o
-.PHONY : NCNNPose.o
-
-# target to build an object file
-NCNNPose.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNNPose.cpp.o
-.PHONY : NCNNPose.cpp.o
-
-NCNNPose.i: NCNNPose.cpp.i
-.PHONY : NCNNPose.i
+NCNN.i: NCNN.cpp.i
+.PHONY : NCNN.i
 
 # target to preprocess a source file
-NCNNPose.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNNPose.cpp.i
-.PHONY : NCNNPose.cpp.i
+NCNN.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNN.cpp.i
+.PHONY : NCNN.cpp.i
 
-NCNNPose.s: NCNNPose.cpp.s
-.PHONY : NCNNPose.s
+NCNN.s: NCNN.cpp.s
+.PHONY : NCNN.s
 
 # target to generate assembly for a file
-NCNNPose.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNNPose.cpp.s
-.PHONY : NCNNPose.cpp.s
+NCNN.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNN.cpp.s
+.PHONY : NCNN.cpp.s
 
 NMS.o: NMS.cpp.o
 .PHONY : NMS.o
@@ -234,12 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... BV_EM"
-	@echo "... NCNNDet.o"
-	@echo "... NCNNDet.i"
-	@echo "... NCNNDet.s"
-	@echo "... NCNNPose.o"
-	@echo "... NCNNPose.i"
-	@echo "... NCNNPose.s"
+	@echo "... NCNN.o"
+	@echo "... NCNN.i"
+	@echo "... NCNN.s"
 	@echo "... NMS.o"
 	@echo "... NMS.i"
 	@echo "... NMS.s"

@@ -10,14 +10,14 @@
 #include <vector>
 
 
-#include "NCNNPose.h"
 #include "benchmark.h"
-#include "NCNNDet.h"
+#include "NCNN.h"
 #include "mat.h"
 
 #include <chrono>
 
 #include "NMS.h"
+#include "utils.h"
  
 static int draw_fps(cv::Mat &rgb, double value)
 {
@@ -69,6 +69,15 @@ void DrawKeypoint(cv::Mat& image, std::vector<BBox>& relPos){
     }
 }
 
+void DrawKeypoint(cv::Mat& image, std::vector<Keypoint>& relPos, const BBox& ogImage){
+    cv::Point2f factor{(float)(ogImage._br.x - ogImage._lt.x) , (float)(ogImage._br.y - ogImage._lt.y)};
+    cv::InputOutputArray arr(image);
+
+    for(auto& e: relPos){
+        cv::circle(arr, cv::Point2f{ogImage._lt.x + e.x * factor.x,ogImage._lt.y + e.y * factor.y}, 10, cv::Scalar{0,0,250,255});
+    }
+}
+
 
 
 
@@ -105,16 +114,18 @@ int main(int argc, char** argv )
         auto inf_prev = std::chrono::system_clock::now();
         
         //Get all the boxes of the system
-        std::vector<BBox> boxes = detector.GetBBoxes(detector.GetData(frame));
-        NMS::NMS(boxes, 0.5);
+        std::vector<BBox> boxes = detector.GetData(detector.PrepareInput(frame));
+        NMS::NMS(boxes, 0.1);
 
         std::vector<Keypoint> keypoints;
         if(boxes.size() > 0){
-            cv::Rect roi;
-            
-
+            //For now we assume, that it's a body detector. Therefore, only the first and most probable is the important one
             cv::Rect roi(boxes[0]._lt.x,boxes[0]._lt.y,boxes[0]._br.x,boxes[0]._br.y);
-            keypoints = estimator.GetData(frame(roi));
+
+            //TODO: Maybe Expand?
+
+            //TODO: Does not pass a frame for some reason.
+            keypoints = estimator.GetData(estimator.PrepareInput(frame(roi)));
         }
 
         auto inf_stop = std::chrono::system_clock::now();
@@ -122,6 +133,8 @@ int main(int argc, char** argv )
         
         
         DrawKeypoint(frame, boxes);
+        if(boxes.size() > 0)
+            DrawKeypoint(frame, keypoints,boxes[0]);
 
         auto t_curr = std::chrono::system_clock::now(); movAvgFPS[t_idx++] = std::chrono::duration<double>(t_curr-t_prev).count(); t_idx %= 10; t_prev = t_curr;
         double t_frame = 0; for(int i = 0; i < 10; ++i) t_frame += movAvgFPS[i]; t_frame /= 10.0;

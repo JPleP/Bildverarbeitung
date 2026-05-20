@@ -18,5 +18,5 @@ link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 
 
-add_executable(BV_EM main.cpp NCNNDet.cpp NCNNPose.cpp NMS.cpp)
+add_executable(BV_EM main.cpp NCNN.cpp NMS.cpp)
 target_link_libraries( BV_EM ncnn ${OpenCV_LIBS} )
