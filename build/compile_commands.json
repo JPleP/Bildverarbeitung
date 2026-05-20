@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build",
+  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4  -fopenmp -g -o CMakeFiles/BV_EM.dir/main.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/main.cpp",
+  "file": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/main.cpp",
+  "output": "CMakeFiles/BV_EM.dir/main.cpp.o"
+},
+{
+  "directory": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build",
+  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4  -fopenmp -g -o CMakeFiles/BV_EM.dir/NCNNDet.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNDet.cpp",
+  "file": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNDet.cpp",
+  "output": "CMakeFiles/BV_EM.dir/NCNNDet.cpp.o"
+},
+{
+  "directory": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build",
+  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4  -fopenmp -g -o CMakeFiles/BV_EM.dir/NCNNPose.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNPose.cpp",
+  "file": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNNPose.cpp",
+  "output": "CMakeFiles/BV_EM.dir/NCNNPose.cpp.o"
+},
+{
+  "directory": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build",
+  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4  -fopenmp -g -o CMakeFiles/BV_EM.dir/NMS.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp",
+  "file": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp",
+  "output": "CMakeFiles/BV_EM.dir/NMS.cpp.o"
+}
+]

@@ -1,0 +1,3 @@
+/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles/BV_EM.dir
+/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles/edit_cache.dir
+/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles/rebuild_cache.dir
