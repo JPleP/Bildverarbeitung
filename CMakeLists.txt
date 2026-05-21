@@ -25,9 +25,11 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 if(CMAKE_SYSTEM_PROCESSOR MATCHES "arm|aarch64")
     link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib_RPI)
     set(ARCH_DIR arm64)
+    message(STATUS "Building for RPI")
 elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|AMD64")
     link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib_PC)
     set(ARCH_DIR x86_64)
+    message(STATUS "Building for PC")
 endif()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
@@ -40,7 +42,15 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY
     ${CMAKE_BINARY_DIR}/${ARCH_DIR}/lib)
 
 
-
+find_package(Vulkan REQUIRED)
+find_package(glslang CONFIG REQUIRED)
 
 add_executable(BV_EM main.cpp NCNN.cpp Camera.cpp)
-target_link_libraries( BV_EM ncnn ${OpenCV_LIBS} PkgConfig::LIBCAMERA)
+target_link_libraries( BV_EM 
+ncnn 
+${OpenCV_LIBS} 
+PkgConfig::LIBCAMERA
+glslang::glslang
+glslang::SPIRV
+Vulkan::Vulkan
+)

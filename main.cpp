@@ -104,10 +104,10 @@ int main(int argc, char** argv )
 
 
     cv::Size detectorSize(320,320);
-    NCNNDet detector("../../models/WholeBody/Det_Body.param","../../models/WholeBody/Det_Body.bin", detectorSize.width,detectorSize.height);
+    NCNNDet detector("../../../models/WholeBody/Det_Body.param","../../../models/WholeBody/Det_Body.bin", detectorSize.width,detectorSize.height);
     
     cv::Size estimatorSize(192,256);
-    NCNNPose estimator("../../models/WholeBody/Est_Body.param","../../models/WholeBody/Est_Body.bin", estimatorSize.width,estimatorSize.height);
+    NCNNPose estimator("../../../models/WholeBody/Est_Body.param","../../../models/WholeBody/Est_Body.bin", estimatorSize.width,estimatorSize.height);
 
     auto t_prev = std::chrono::system_clock::now();
     float movAvgFPS[10] = {}; int t_idx = 0;
