@@ -4,9 +4,21 @@ build/cmake_install.cmake
 build/CMakeCache.txt
 build/compile_commands.json
 build/Makefile
-models/
+# Ignore everything
+models/*
+
+# Allow directories
+!models/Hands/
+!models/WholeBody/
+
+# Ignore everything inside allowed directories
+models/Hands/*
+models/WholeBody/*
+
+# Keep specific files
 !models/Hands/Det_Hand.bin
 !models/Hands/Det_Hand.param
+
 !models/WholeBody/Det_Body.bin
 !models/WholeBody/Det_Body.param
 !models/WholeBody/Est_Body.bin
