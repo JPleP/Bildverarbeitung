@@ -244,6 +244,18 @@ OpenMP_gomp_LIBRARY:FILEPATH=/usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so
 //Path to the pthread library for OpenMP
 OpenMP_pthread_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.a
 
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+//Path to a library.
+pkgcfg_lib_LIBCAMERA_camera:FILEPATH=/usr/local/lib/x86_64-linux-gnu/libcamera.so
+
+//Path to a library.
+pkgcfg_lib_LIBCAMERA_camera-base:FILEPATH=/usr/local/lib/x86_64-linux-gnu/libcamera-base.so
+
 
 ########################
 # INTERNAL cache entries
@@ -400,6 +412,43 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][TRUE][c ][v4.5()]
 FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.5()]
 //Details about finding OpenMP_CXX
 FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.5()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.1()]
+LIBCAMERA_CFLAGS:INTERNAL=-I/usr/local/include/libcamera
+LIBCAMERA_CFLAGS_I:INTERNAL=
+LIBCAMERA_CFLAGS_OTHER:INTERNAL=
+LIBCAMERA_FOUND:INTERNAL=1
+LIBCAMERA_INCLUDEDIR:INTERNAL=/usr/local/include
+LIBCAMERA_INCLUDE_DIRS:INTERNAL=/usr/local/include/libcamera
+LIBCAMERA_LDFLAGS:INTERNAL=-L/usr/local/lib/x86_64-linux-gnu;-lcamera;-lcamera-base
+LIBCAMERA_LDFLAGS_OTHER:INTERNAL=
+LIBCAMERA_LIBDIR:INTERNAL=/usr/local/lib/x86_64-linux-gnu
+LIBCAMERA_LIBRARIES:INTERNAL=camera;camera-base
+LIBCAMERA_LIBRARY_DIRS:INTERNAL=/usr/local/lib/x86_64-linux-gnu
+LIBCAMERA_LIBS:INTERNAL=
+LIBCAMERA_LIBS_L:INTERNAL=
+LIBCAMERA_LIBS_OTHER:INTERNAL=
+LIBCAMERA_LIBS_PATHS:INTERNAL=
+LIBCAMERA_MODULE_NAME:INTERNAL=libcamera
+LIBCAMERA_PREFIX:INTERNAL=/usr/local
+LIBCAMERA_STATIC_CFLAGS:INTERNAL=-I/usr/local/include/libcamera
+LIBCAMERA_STATIC_CFLAGS_I:INTERNAL=
+LIBCAMERA_STATIC_CFLAGS_OTHER:INTERNAL=
+LIBCAMERA_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include/libcamera
+LIBCAMERA_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib/x86_64-linux-gnu;-lcamera;-lcamera-base
+LIBCAMERA_STATIC_LDFLAGS_OTHER:INTERNAL=
+LIBCAMERA_STATIC_LIBDIR:INTERNAL=
+LIBCAMERA_STATIC_LIBRARIES:INTERNAL=camera;camera-base
+LIBCAMERA_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib/x86_64-linux-gnu
+LIBCAMERA_STATIC_LIBS:INTERNAL=
+LIBCAMERA_STATIC_LIBS_L:INTERNAL=
+LIBCAMERA_STATIC_LIBS_OTHER:INTERNAL=
+LIBCAMERA_STATIC_LIBS_PATHS:INTERNAL=
+LIBCAMERA_VERSION:INTERNAL=0.7.1
+LIBCAMERA_libcamera_INCLUDEDIR:INTERNAL=
+LIBCAMERA_libcamera_LIBDIR:INTERNAL=
+LIBCAMERA_libcamera_PREFIX:INTERNAL=
+LIBCAMERA_libcamera_VERSION:INTERNAL=
 //Result of TRY_COMPILE
 OpenMP_COMPILE_RESULT_CXX_fopenmp:INTERNAL=TRUE
 //Result of TRY_COMPILE
@@ -424,10 +473,21 @@ OpenMP_SPECTEST_C_:INTERNAL=TRUE
 OpenMP_gomp_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenMP_pthread_LIBRARY
 OpenMP_pthread_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //linker supports push/pop state
 _CMAKE_C_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
+__pkg_config_arguments_LIBCAMERA:INTERNAL=REQUIRED;IMPORTED_TARGET;libcamera
+__pkg_config_checked_LIBCAMERA:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_LIBCAMERA_camera
+pkgcfg_lib_LIBCAMERA_camera-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_LIBCAMERA_camera-base
+pkgcfg_lib_LIBCAMERA_camera-base-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/usr/local/lib/x86_64-linux-gnu
 

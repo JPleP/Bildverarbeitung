@@ -129,6 +129,30 @@ BV_EM/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/build
 .PHONY : BV_EM/fast
 
+Camera.o: Camera.cpp.o
+.PHONY : Camera.o
+
+# target to build an object file
+Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/Camera.cpp.o
+.PHONY : Camera.cpp.o
+
+Camera.i: Camera.cpp.i
+.PHONY : Camera.i
+
+# target to preprocess a source file
+Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/Camera.cpp.i
+.PHONY : Camera.cpp.i
+
+Camera.s: Camera.cpp.s
+.PHONY : Camera.s
+
+# target to generate assembly for a file
+Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/Camera.cpp.s
+.PHONY : Camera.cpp.s
+
 NCNN.o: NCNN.cpp.o
 .PHONY : NCNN.o
 
@@ -152,30 +176,6 @@ NCNN.s: NCNN.cpp.s
 NCNN.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NCNN.cpp.s
 .PHONY : NCNN.cpp.s
-
-NMS.o: NMS.cpp.o
-.PHONY : NMS.o
-
-# target to build an object file
-NMS.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NMS.cpp.o
-.PHONY : NMS.cpp.o
-
-NMS.i: NMS.cpp.i
-.PHONY : NMS.i
-
-# target to preprocess a source file
-NMS.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NMS.cpp.i
-.PHONY : NMS.cpp.i
-
-NMS.s: NMS.cpp.s
-.PHONY : NMS.s
-
-# target to generate assembly for a file
-NMS.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BV_EM.dir/build.make CMakeFiles/BV_EM.dir/NMS.cpp.s
-.PHONY : NMS.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -210,12 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... BV_EM"
+	@echo "... Camera.o"
+	@echo "... Camera.i"
+	@echo "... Camera.s"
 	@echo "... NCNN.o"
 	@echo "... NCNN.i"
 	@echo "... NCNN.s"
-	@echo "... NMS.o"
-	@echo "... NMS.i"
-	@echo "... NMS.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

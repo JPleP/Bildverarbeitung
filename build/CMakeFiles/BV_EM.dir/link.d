@@ -1,12 +1,12 @@
-BV_EM: \
+x86_64/bin/BV_EM: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtoffloadbegin.o \
   CMakeFiles/BV_EM.dir/main.cpp.o \
   CMakeFiles/BV_EM.dir/NCNN.cpp.o \
-  CMakeFiles/BV_EM.dir/NMS.cpp.o \
-  /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/lib/libncnn.a \
+  CMakeFiles/BV_EM.dir/Camera.cpp.o \
+  /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/lib_PC/libncnn.a \
   /usr/local/lib/libopencv_gapi.so.4.14.0 \
   /usr/local/lib/libopencv_highgui.so.4.14.0 \
   /usr/local/lib/libopencv_ml.so.4.14.0 \
@@ -22,6 +22,8 @@ BV_EM: \
   /usr/local/lib/libopencv_flann.so.4.14.0 \
   /usr/local/lib/libopencv_imgproc.so.4.14.0 \
   /usr/local/lib/libopencv_core.so.4.14.0 \
+  /usr/local/lib/x86_64-linux-gnu/libcamera.so \
+  /usr/local/lib/x86_64-linux-gnu/libcamera-base.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libm.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libm.so \
@@ -73,6 +75,17 @@ BV_EM: \
   /lib/i386-linux-gnu/libz.so.1 \
   /usr/lib/i386-linux-gnu/libz.so.1 \
   /lib/x86_64-linux-gnu/libz.so.1 \
+  /usr/local/lib/x86_64-linux-gnu/libcamera-base.so \
+  /lib/i386-linux-gnu/libEGL.so.1 \
+  /usr/lib/i386-linux-gnu/libEGL.so.1 \
+  /lib/x86_64-linux-gnu/libEGL.so.1 \
+  /lib/x86_64-linux-gnu/libGLESv2.so.2 \
+  /lib/i386-linux-gnu/libcrypto.so.3 \
+  /usr/lib/i386-linux-gnu/libcrypto.so.3 \
+  /lib/x86_64-linux-gnu/libcrypto.so.3 \
+  /lib/i386-linux-gnu/libudev.so.1 \
+  /usr/lib/i386-linux-gnu/libudev.so.1 \
+  /lib/x86_64-linux-gnu/libudev.so.1 \
   /lib64/ld-linux-x86-64.so.2 \
   /lib/i386-linux-gnu/libjpeg.so.8 \
   /usr/lib/i386-linux-gnu/libjpeg.so.8 \
@@ -198,12 +211,18 @@ BV_EM: \
   /lib/i386-linux-gnu/libpcre2-8.so.0 \
   /usr/lib/i386-linux-gnu/libpcre2-8.so.0 \
   /lib/x86_64-linux-gnu/libpcre2-8.so.0 \
-  /lib/i386-linux-gnu/libsharpyuv.so.0 \
-  /usr/lib/i386-linux-gnu/libsharpyuv.so.0 \
-  /lib/x86_64-linux-gnu/libsharpyuv.so.0 \
+  /lib/i386-linux-gnu/libGLdispatch.so.0 \
+  /usr/lib/i386-linux-gnu/libGLdispatch.so.0 \
+  /lib/x86_64-linux-gnu/libGLdispatch.so.0 \
   /lib/i386-linux-gnu/libzstd.so.1 \
   /usr/lib/i386-linux-gnu/libzstd.so.1 \
   /lib/x86_64-linux-gnu/libzstd.so.1 \
+  /lib/i386-linux-gnu/libcap.so.2 \
+  /usr/lib/i386-linux-gnu/libcap.so.2 \
+  /lib/x86_64-linux-gnu/libcap.so.2 \
+  /lib/i386-linux-gnu/libsharpyuv.so.0 \
+  /usr/lib/i386-linux-gnu/libsharpyuv.so.0 \
+  /lib/x86_64-linux-gnu/libsharpyuv.so.0 \
   /lib/i386-linux-gnu/liblzma.so.5 \
   /usr/lib/i386-linux-gnu/liblzma.so.5 \
   /lib/x86_64-linux-gnu/liblzma.so.5 \
@@ -258,10 +277,7 @@ BV_EM: \
   /lib/x86_64-linux-gnu/libsystemd.so.0 \
   /lib/i386-linux-gnu/libbrotlicommon.so.1 \
   /usr/lib/i386-linux-gnu/libbrotlicommon.so.1 \
-  /lib/x86_64-linux-gnu/libbrotlicommon.so.1 \
-  /lib/i386-linux-gnu/libcap.so.2 \
-  /usr/lib/i386-linux-gnu/libcap.so.2 \
-  /lib/x86_64-linux-gnu/libcap.so.2
+  /lib/x86_64-linux-gnu/libbrotlicommon.so.1
 
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o:
 
@@ -275,9 +291,9 @@ CMakeFiles/BV_EM.dir/main.cpp.o:
 
 CMakeFiles/BV_EM.dir/NCNN.cpp.o:
 
-CMakeFiles/BV_EM.dir/NMS.cpp.o:
+CMakeFiles/BV_EM.dir/Camera.cpp.o:
 
-/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/lib/libncnn.a:
+/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/lib_PC/libncnn.a:
 
 /usr/local/lib/libopencv_gapi.so.4.14.0:
 
@@ -308,6 +324,10 @@ CMakeFiles/BV_EM.dir/NMS.cpp.o:
 /usr/local/lib/libopencv_imgproc.so.4.14.0:
 
 /usr/local/lib/libopencv_core.so.4.14.0:
+
+/usr/local/lib/x86_64-linux-gnu/libcamera.so:
+
+/usr/local/lib/x86_64-linux-gnu/libcamera-base.so:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so:
 
@@ -410,6 +430,28 @@ CMakeFiles/BV_EM.dir/NMS.cpp.o:
 /usr/lib/i386-linux-gnu/libz.so.1:
 
 /lib/x86_64-linux-gnu/libz.so.1:
+
+/usr/local/lib/x86_64-linux-gnu/libcamera-base.so:
+
+/lib/i386-linux-gnu/libEGL.so.1:
+
+/usr/lib/i386-linux-gnu/libEGL.so.1:
+
+/lib/x86_64-linux-gnu/libEGL.so.1:
+
+/lib/x86_64-linux-gnu/libGLESv2.so.2:
+
+/lib/i386-linux-gnu/libcrypto.so.3:
+
+/usr/lib/i386-linux-gnu/libcrypto.so.3:
+
+/lib/x86_64-linux-gnu/libcrypto.so.3:
+
+/lib/i386-linux-gnu/libudev.so.1:
+
+/usr/lib/i386-linux-gnu/libudev.so.1:
+
+/lib/x86_64-linux-gnu/libudev.so.1:
 
 /lib64/ld-linux-x86-64.so.2:
 
@@ -661,17 +703,29 @@ CMakeFiles/BV_EM.dir/NMS.cpp.o:
 
 /lib/x86_64-linux-gnu/libpcre2-8.so.0:
 
-/lib/i386-linux-gnu/libsharpyuv.so.0:
+/lib/i386-linux-gnu/libGLdispatch.so.0:
 
-/usr/lib/i386-linux-gnu/libsharpyuv.so.0:
+/usr/lib/i386-linux-gnu/libGLdispatch.so.0:
 
-/lib/x86_64-linux-gnu/libsharpyuv.so.0:
+/lib/x86_64-linux-gnu/libGLdispatch.so.0:
 
 /lib/i386-linux-gnu/libzstd.so.1:
 
 /usr/lib/i386-linux-gnu/libzstd.so.1:
 
 /lib/x86_64-linux-gnu/libzstd.so.1:
+
+/lib/i386-linux-gnu/libcap.so.2:
+
+/usr/lib/i386-linux-gnu/libcap.so.2:
+
+/lib/x86_64-linux-gnu/libcap.so.2:
+
+/lib/i386-linux-gnu/libsharpyuv.so.0:
+
+/usr/lib/i386-linux-gnu/libsharpyuv.so.0:
+
+/lib/x86_64-linux-gnu/libsharpyuv.so.0:
 
 /lib/i386-linux-gnu/liblzma.so.5:
 
@@ -782,9 +836,3 @@ CMakeFiles/BV_EM.dir/NMS.cpp.o:
 /usr/lib/i386-linux-gnu/libbrotlicommon.so.1:
 
 /lib/x86_64-linux-gnu/libbrotlicommon.so.1:
-
-/lib/i386-linux-gnu/libcap.so.2:
-
-/usr/lib/i386-linux-gnu/libcap.so.2:
-
-/lib/x86_64-linux-gnu/libcap.so.2:

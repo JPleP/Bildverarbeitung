@@ -42,3 +42,20 @@ public:
     //Input a open cv frame and forward the model interference,Postprocess raw tensor from detection to BBox. For speed, only consider those above threshold
     std::vector<Keypoint> GetData(ncnn::Extractor ex);
 };
+
+
+class Body2DPoseEst : public NCNNPose{
+    public:
+    enum KEY_LABELS{
+        nose = 0 ,
+        left_eye,right_eye,
+        left_ear,right_ear,
+        left_shoulder,right_shoulder,
+        left_elbow,right_elbow,
+        left_wrist, right_wrist,
+        left_hip, right_hip,
+        left_knee, right_knee,
+        left_ankle, right_ankle
+    };
+
+};

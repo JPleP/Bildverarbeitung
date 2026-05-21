@@ -1,20 +1,20 @@
 [
 {
   "directory": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build",
-  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4  -fopenmp -g -o CMakeFiles/BV_EM.dir/main.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/main.cpp",
+  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/libcamera  -fopenmp -g -o CMakeFiles/BV_EM.dir/main.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/main.cpp",
   "file": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/main.cpp",
   "output": "CMakeFiles/BV_EM.dir/main.cpp.o"
 },
 {
   "directory": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build",
-  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4  -fopenmp -g -o CMakeFiles/BV_EM.dir/NCNN.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.cpp",
+  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/libcamera  -fopenmp -g -o CMakeFiles/BV_EM.dir/NCNN.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.cpp",
   "file": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.cpp",
   "output": "CMakeFiles/BV_EM.dir/NCNN.cpp.o"
 },
 {
   "directory": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build",
-  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4  -fopenmp -g -o CMakeFiles/BV_EM.dir/NMS.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp",
-  "file": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp",
-  "output": "CMakeFiles/BV_EM.dir/NMS.cpp.o"
+  "command": "/usr/bin/c++  -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/libcamera  -fopenmp -g -o CMakeFiles/BV_EM.dir/Camera.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.cpp",
+  "file": "/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.cpp",
+  "output": "CMakeFiles/BV_EM.dir/Camera.cpp.o"
 }
 ]

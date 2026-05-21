@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4
+CXX_INCLUDES = -I/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/libcamera
 
 CXX_FLAGS =  -fopenmp -g
 

@@ -1,6 +1,7 @@
-CMakeFiles/BV_EM.dir/main.cpp.o: \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/main.cpp \
+CMakeFiles/BV_EM.dir/Camera.cpp.o: \
+ /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.cpp \
  /usr/include/stdc-predef.h \
+ /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.h \
  /usr/local/include/opencv4/opencv2/core/mat.hpp \
  /usr/local/include/opencv4/opencv2/core/matx.hpp \
  /usr/local/include/opencv4/opencv2/core/cvdef.h \
@@ -377,25 +378,6 @@ CMakeFiles/BV_EM.dir/main.cpp.o: \
  /usr/local/include/opencv4/opencv2/video.hpp \
  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/benchmark.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/layer.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/mat.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/allocator.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/platform.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/ncnn_export.h \
- /usr/include/c++/15/fenv.h /usr/include/fenv.h \
- /usr/include/x86_64-linux-gnu/bits/fenv.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/option.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/modelbin.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/paramdict.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/mat.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/net.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/include/blob.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/utils.h \
- /usr/include/c++/15/thread /usr/include/c++/15/bits/std_thread.h \
- /usr/include/c++/15/bits/this_thread_sleep.h \
- /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.h \
  /usr/local/include/libcamera/libcamera/libcamera.h \
  /usr/local/include/libcamera/libcamera/camera.h \
  /usr/include/c++/15/optional \

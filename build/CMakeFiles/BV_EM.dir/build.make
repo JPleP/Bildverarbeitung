@@ -100,55 +100,57 @@ CMakeFiles/BV_EM.dir/NCNN.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BV_EM.dir/NCNN.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NCNN.cpp -o CMakeFiles/BV_EM.dir/NCNN.cpp.s
 
-CMakeFiles/BV_EM.dir/NMS.cpp.o: CMakeFiles/BV_EM.dir/flags.make
-CMakeFiles/BV_EM.dir/NMS.cpp.o: /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp
-CMakeFiles/BV_EM.dir/NMS.cpp.o: CMakeFiles/BV_EM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BV_EM.dir/NMS.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BV_EM.dir/NMS.cpp.o -MF CMakeFiles/BV_EM.dir/NMS.cpp.o.d -o CMakeFiles/BV_EM.dir/NMS.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp
+CMakeFiles/BV_EM.dir/Camera.cpp.o: CMakeFiles/BV_EM.dir/flags.make
+CMakeFiles/BV_EM.dir/Camera.cpp.o: /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.cpp
+CMakeFiles/BV_EM.dir/Camera.cpp.o: CMakeFiles/BV_EM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BV_EM.dir/Camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BV_EM.dir/Camera.cpp.o -MF CMakeFiles/BV_EM.dir/Camera.cpp.o.d -o CMakeFiles/BV_EM.dir/Camera.cpp.o -c /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.cpp
 
-CMakeFiles/BV_EM.dir/NMS.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BV_EM.dir/NMS.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp > CMakeFiles/BV_EM.dir/NMS.cpp.i
+CMakeFiles/BV_EM.dir/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BV_EM.dir/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.cpp > CMakeFiles/BV_EM.dir/Camera.cpp.i
 
-CMakeFiles/BV_EM.dir/NMS.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BV_EM.dir/NMS.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/NMS.cpp -o CMakeFiles/BV_EM.dir/NMS.cpp.s
+CMakeFiles/BV_EM.dir/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BV_EM.dir/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/Camera.cpp -o CMakeFiles/BV_EM.dir/Camera.cpp.s
 
 # Object files for target BV_EM
 BV_EM_OBJECTS = \
 "CMakeFiles/BV_EM.dir/main.cpp.o" \
 "CMakeFiles/BV_EM.dir/NCNN.cpp.o" \
-"CMakeFiles/BV_EM.dir/NMS.cpp.o"
+"CMakeFiles/BV_EM.dir/Camera.cpp.o"
 
 # External object files for target BV_EM
 BV_EM_EXTERNAL_OBJECTS =
 
-BV_EM: CMakeFiles/BV_EM.dir/main.cpp.o
-BV_EM: CMakeFiles/BV_EM.dir/NCNN.cpp.o
-BV_EM: CMakeFiles/BV_EM.dir/NMS.cpp.o
-BV_EM: CMakeFiles/BV_EM.dir/build.make
-BV_EM: CMakeFiles/BV_EM.dir/compiler_depend.ts
-BV_EM: /usr/local/lib/libopencv_gapi.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_highgui.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_ml.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_objdetect.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_photo.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_stitching.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_video.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_videoio.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_imgcodecs.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_dnn.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_calib3d.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_features2d.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_flann.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_imgproc.so.4.14.0
-BV_EM: /usr/local/lib/libopencv_core.so.4.14.0
-BV_EM: CMakeFiles/BV_EM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable BV_EM"
+x86_64/bin/BV_EM: CMakeFiles/BV_EM.dir/main.cpp.o
+x86_64/bin/BV_EM: CMakeFiles/BV_EM.dir/NCNN.cpp.o
+x86_64/bin/BV_EM: CMakeFiles/BV_EM.dir/Camera.cpp.o
+x86_64/bin/BV_EM: CMakeFiles/BV_EM.dir/build.make
+x86_64/bin/BV_EM: CMakeFiles/BV_EM.dir/compiler_depend.ts
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_gapi.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_highgui.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_ml.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_objdetect.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_photo.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_stitching.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_video.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_videoio.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_imgcodecs.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_dnn.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_calib3d.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_features2d.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_flann.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_imgproc.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/libopencv_core.so.4.14.0
+x86_64/bin/BV_EM: /usr/local/lib/x86_64-linux-gnu/libcamera.so
+x86_64/bin/BV_EM: /usr/local/lib/x86_64-linux-gnu/libcamera-base.so
+x86_64/bin/BV_EM: CMakeFiles/BV_EM.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jannes/Desktop/Files/University/M_ETIT/2_Semester/EM/Bildverarbeitung/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable x86_64/bin/BV_EM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BV_EM.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/BV_EM.dir/build: BV_EM
+CMakeFiles/BV_EM.dir/build: x86_64/bin/BV_EM
 .PHONY : CMakeFiles/BV_EM.dir/build
 
 CMakeFiles/BV_EM.dir/clean:

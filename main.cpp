@@ -16,8 +16,15 @@
 
 #include <chrono>
 
-#include "NMS.h"
 #include "utils.h"
+
+#include <iomanip>
+#include <iostream>
+#include <memory>
+#include <thread>
+
+#include "Camera.h"
+
  
 static int draw_fps(cv::Mat &rgb, double value)
 {
@@ -73,7 +80,8 @@ void DrawKeypoint(cv::Mat& image, std::vector<Keypoint>& relPos){
     cv::Point2f factor{(float)image.cols, (float)image.rows};
     cv::InputOutputArray arr(image);
 
-    for(auto& e: relPos){
+    for(int i = 0; i < Body2DPoseEst::KEY_LABELS::right_hip; ++i){
+        auto& e = relPos[i];
         cv::circle(arr, cv::Point2f{e.x * factor.x,e.y * factor.y}, 10, cv::Scalar{0,0,250,255});
     }
 }
@@ -85,9 +93,7 @@ void DrawKeypoint(cv::Mat& image, std::vector<Keypoint>& relPos){
 int main(int argc, char** argv )
 {
     
-    cv::VideoCapture videoStream(0);
-    cv::Size resolution = cv::Size((int) videoStream.get(cv::CAP_PROP_FRAME_WIDTH),
-                    (int) videoStream.get(cv::CAP_PROP_FRAME_HEIGHT));
+    Camera camera;
 
     cv::Mat frame;
     //cv::Mat frame;
@@ -98,17 +104,17 @@ int main(int argc, char** argv )
 
 
     cv::Size detectorSize(320,320);
-    NCNNDet detector("../models/WholeBody/Det_Body.param","../models/WholeBody/Det_Body.bin", detectorSize.width,detectorSize.height);
+    NCNNDet detector("../../models/WholeBody/Det_Body.param","../../models/WholeBody/Det_Body.bin", detectorSize.width,detectorSize.height);
     
     cv::Size estimatorSize(192,256);
-    NCNNPose estimator("../models/WholeBody/Est_Body.param","../models/WholeBody/Est_Body.bin", estimatorSize.width,estimatorSize.height);
+    NCNNPose estimator("../../models/WholeBody/Est_Body.param","../../models/WholeBody/Est_Body.bin", estimatorSize.width,estimatorSize.height);
 
     auto t_prev = std::chrono::system_clock::now();
     float movAvgFPS[10] = {}; int t_idx = 0;
     
     for(;;){
         //Get the current frame
-        videoStream >> frame;
+        camera >> frame;
 
     
         auto inf_prev = std::chrono::system_clock::now();
