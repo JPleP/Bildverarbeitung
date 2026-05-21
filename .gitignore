@@ -1,0 +1,13 @@
+build/.cmake/
+build/CMakeFiles/
+build/cmake_install.cmake
+build/CMakeCache.txt
+build/compile_commands.json
+build/Makefile
+models/
+!models/Hands/Det_Hand.bin
+!models/Hands/Det_Hand.param
+!models/WholeBody/Det_Body.bin
+!models/WholeBody/Det_Body.param
+!models/WholeBody/Est_Body.bin
+!models/WholeBody/Est_Body.param
