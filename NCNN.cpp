@@ -126,10 +126,10 @@ BBox NCNNDet::Idx2BBox(const ncnn::Mat& matrix, int x, int y, float stride){
 
     //Convert the deltas to bounding boxes in normalized coordinates
     BBox top;
-    top._lt.x = (((float)x + 0.5f) * (float)stride - Get(matrix,x, y, 0) / (float)_width    - _shift_x)*_rescale_x; 
-    top._lt.y = (((float)y + 0.5f) * (float)stride - Get(matrix,x, y, 1) / (float)_height   - _shift_y)*_rescale_y; 
-    top._br.x = (((float)x + 0.5f) * (float)stride + Get(matrix,x, y, 2) / (float)_width    - _shift_x)*_rescale_x;
-    top._br.y = (((float)y + 0.5f) * (float)stride + Get(matrix,x, y, 3) / (float)_height   - _shift_y)*_rescale_y;
+    top._lt.x = (((float)x) * (float)stride - Get(matrix,x, y, 0) / (float)_width    - _shift_x)*_rescale_x; 
+    top._lt.y = (((float)y) * (float)stride - Get(matrix,x, y, 1) / (float)_height   - _shift_y)*_rescale_y; 
+    top._br.x = (((float)x) * (float)stride + Get(matrix,x, y, 2) / (float)_width    - _shift_x)*_rescale_x;
+    top._br.y = (((float)y) * (float)stride + Get(matrix,x, y, 3) / (float)_height   - _shift_y)*_rescale_y;
     return top;
 }
 
@@ -222,7 +222,7 @@ std::vector<Keypoint> NCNNPose::GetData(ncnn::Extractor ex){
             }
         }
         //Normalize the value of each coordinate.
-        feature.x = ((float)feature.x / (float)out0.h - _shift_x)*_rescale_x;
+        feature.x = ((float)feature.x / (float)out0.w - _shift_x)*_rescale_x;
     }
     for(int feat = 0; feat < out1.h; ++feat){
         Keypoint& feature = keypoints[feat];

@@ -69,12 +69,12 @@ void DrawKeypoint(cv::Mat& image, std::vector<BBox>& relPos){
     }
 }
 
-void DrawKeypoint(cv::Mat& image, std::vector<Keypoint>& relPos, const BBox& ogImage){
-    cv::Point2f factor{(float)(ogImage._br.x - ogImage._lt.x) , (float)(ogImage._br.y - ogImage._lt.y)};
+void DrawKeypoint(cv::Mat& image, std::vector<Keypoint>& relPos){
+    cv::Point2f factor{(float)image.cols, (float)image.rows};
     cv::InputOutputArray arr(image);
 
     for(auto& e: relPos){
-        cv::circle(arr, cv::Point2f{ogImage._lt.x + e.x * factor.x,ogImage._lt.y + e.y * factor.y}, 10, cv::Scalar{0,0,250,255});
+        cv::circle(arr, cv::Point2f{e.x * factor.x,e.y * factor.y}, 10, cv::Scalar{0,0,250,255});
     }
 }
 
@@ -117,15 +117,29 @@ int main(int argc, char** argv )
         std::vector<BBox> boxes = detector.GetData(detector.PrepareInput(frame));
         NMS::NMS(boxes, 0.1);
 
+        //Ensure all boxes are constrained to the image
+        for(auto& box : boxes){
+            box._br.x = std::min(box._br.x, 0.999f);
+            box._br.y = std::min(box._br.y, 0.999f);
+            box._lt.x = std::max(box._lt.x, 0.0f);
+            box._lt.y = std::max(box._lt.y, 0.0f);
+        }
+
         std::vector<Keypoint> keypoints;
         if(boxes.size() > 0){
             //For now we assume, that it's a body detector. Therefore, only the first and most probable is the important one
-            cv::Rect roi(boxes[0]._lt.x,boxes[0]._lt.y,boxes[0]._br.x,boxes[0]._br.y);
+            cv::Rect roi(boxes[0]._lt.x * (float)frame.cols,boxes[0]._lt.y* (float)frame.rows,(boxes[0]._br.x - boxes[0]._lt.x)* (float)frame.cols,(boxes[0]._br.y - boxes[0]._lt.y)* (float)frame.rows);
 
             //TODO: Maybe Expand?
 
             //TODO: Does not pass a frame for some reason.
-            keypoints = estimator.GetData(estimator.PrepareInput(frame(roi)));
+            cv::Mat roi_frame = cv::Mat(frame, roi).clone();
+            keypoints = estimator.GetData(estimator.PrepareInput(roi_frame));
+            //Change the keypoints in normalized coordinates
+            for(auto& keyp : keypoints){
+                keyp.x = (roi.x + keyp.x * roi.width)/ (float)frame.cols;
+                keyp.y = (roi.y +  keyp.y * roi.height)/ (float)frame.rows;
+            }
         }
 
         auto inf_stop = std::chrono::system_clock::now();
@@ -134,7 +148,7 @@ int main(int argc, char** argv )
         
         DrawKeypoint(frame, boxes);
         if(boxes.size() > 0)
-            DrawKeypoint(frame, keypoints,boxes[0]);
+            DrawKeypoint(frame, keypoints);
 
         auto t_curr = std::chrono::system_clock::now(); movAvgFPS[t_idx++] = std::chrono::duration<double>(t_curr-t_prev).count(); t_idx %= 10; t_prev = t_curr;
         double t_frame = 0; for(int i = 0; i < 10; ++i) t_frame += movAvgFPS[i]; t_frame /= 10.0;
