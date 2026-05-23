@@ -20,6 +20,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
 include_directories( ${OpenCV_INCLUDE_DIRS} ${LIBCAMERA_INCLUDE_DIRS})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/libcamera_core)
 
 
 if(CMAKE_SYSTEM_PROCESSOR MATCHES "arm|aarch64")

@@ -3,6 +3,23 @@
 #include <algorithm>
 #include <vector>
 
+
+struct Vec2i{
+    int x;
+    int y;
+};
+
+
+struct Recti {
+    int x;
+    int y;
+    int width;
+    int height;
+};
+
+
+
+
 struct BBox{
     cv::Point2f _lt;
     cv::Point2f _br;
