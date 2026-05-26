@@ -6,6 +6,7 @@ build/compile_commands.json
 build/Makefile
 # Ignore everything
 models/*
+.cache/*
 
 # Allow directories
 !models/Hands/
