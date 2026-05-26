@@ -46,7 +46,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY
 find_package(Vulkan REQUIRED)
 find_package(glslang CONFIG REQUIRED)
 
-add_executable(BV_EM main.cpp NCNN.cpp Camera.cpp)
+#add_executable(BV_EM main.cpp NCNN.cpp Camera.cpp)
+
+add_executable(BV_EM mainTest.cpp CameraManager.cpp)
 target_link_libraries( BV_EM 
 ncnn 
 ${OpenCV_LIBS} 

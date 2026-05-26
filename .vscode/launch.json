@@ -10,7 +10,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "./BV_EM",
-            "cwd": "${workspaceRoot}/build",
+            "cwd": "${workspaceRoot}/build/arm64/bin",
             "valuesFormatting": "parseText"
         }
     ]

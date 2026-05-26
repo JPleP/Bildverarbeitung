@@ -4,6 +4,10 @@
 #include <vector>
 
 
+
+#define LOGI(tag, str) std::cout<< "(I) " << tag << " : " << str << std::endl
+
+
 struct Vec2i{
     int x;
     int y;

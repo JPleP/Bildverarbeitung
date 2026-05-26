@@ -11,28 +11,27 @@
 struct VideoStream{
     Vec2i _size;
     libcamera::Stream* _stream;
-
-}
+};
 
 
 
 class CameraManager{
     public:
-    void Init();
-    void End();
+    static void Init();
+    static void End();
 
-    void GetSetCamera();
-
-    static void RunLoop(RPiCamApp& app);
-    static void operator>>(cv::Mat& frame);
+    static void GetSetCamera();
 
     static std::shared_ptr<libcamera::Camera> _camera;
     static std::unique_ptr<libcamera::CameraManager> _cameraManager;
     static std::unique_ptr<libcamera::FrameBufferAllocator> _allocator;
+    static std::vector<std::unique_ptr<libcamera::Request>> _requests;
 
+    static int64_t frameCount = 0;
+     
 
-    static VideoStream _NN = {{320,320}};
-    static VideoStream _Display = {{480,640}};
+    static VideoStream _NN;
+    static VideoStream _Display;
 
-    void RequestNNComplete(libcamera::Request *request);
+    static void requestComplete(libcamera::Request *request);
 };
