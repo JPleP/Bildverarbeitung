@@ -21,7 +21,9 @@ struct Recti {
     int height;
 };
 
-
+struct RGB {
+    uint8_t R,G,B;
+};
 
 
 struct BBox{

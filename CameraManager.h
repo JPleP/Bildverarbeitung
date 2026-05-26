@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <iostream>
 #include <memory>
+#include <mutex>
 #include <thread>
 
 #include <libcamera/libcamera.h>
@@ -16,10 +17,11 @@ struct VideoStream{
 
 
 class CameraManager{
-    public:
+public:
     static void Init();
     static void End();
-
+private:
+    //Get all available camera and sets everything up.
     static void GetSetCamera();
 
     static std::shared_ptr<libcamera::Camera> _camera;
@@ -27,11 +29,21 @@ class CameraManager{
     static std::unique_ptr<libcamera::FrameBufferAllocator> _allocator;
     static std::vector<std::unique_ptr<libcamera::Request>> _requests;
 
-    static int64_t frameCount = 0;
+    //Internal frame counter
+    static int64_t _frameCount = 0;
      
-
+    //Specific data for each stream.
     static VideoStream _NN;
     static VideoStream _Display;
 
-    static void requestComplete(libcamera::Request *request);
+public:
+    //The data relevant for the display.
+    static std::mutex _displayLock;
+    static std::unique_ptr<RGB[]> _displayImage;
+    static Recti _userPosition;
+
+
+public:
+    //Function which receives the completed requests from the libcamera.
+    static void RequestComplete(libcamera::Request *request);
 };

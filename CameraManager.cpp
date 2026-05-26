@@ -59,7 +59,6 @@ void CameraManager::GetSetCamera(){
         streamConfig.size.height = CameraManager::_NN._size.y;
         streamConfig.pixelFormat = libcamera::formats::RGB888;
         streamConfig.bufferCount = 4;
-        streamConfig.bu
         //Validate if the values are allowed
         if(auto result = config->validate(); result == libcamera::CameraConfiguration::Adjusted){
             //Change our internal reference
@@ -136,12 +135,12 @@ void CameraManager::GetSetCamera(){
     }
     LOGI(tag,"Requests Allocated");
 
-    CameraManager::_camera->requestCompleted.connect(requestComplete);
+    CameraManager::_camera->requestCompleted.connect(RequestComplete);
 
 
 
     std::unique_ptr<libcamera::ControlList> camcontrols = std::unique_ptr<libcamera::ControlList>(new libcamera::ControlList());
-    camcontrols->set(controls::FrameDurationLimits, libcamera::Span<const std::int64_t, 2>({33333, 33333}));
+    camcontrols->set(libcamera::controls::FrameDurationLimits, libcamera::Span<const std::int64_t, 2>({33333, 33333}));
     CameraManager::_camera->start(camcontrols.get());
     for (std::unique_ptr<libcamera::Request> &request : CameraManager::_requests)
         CameraManager::_camera->queueRequest(request.get());
@@ -151,7 +150,7 @@ void CameraManager::GetSetCamera(){
 }
 
 
-void CameraManager::requestComplete(libcamera::Request *request)
+void CameraManager::RequestComplete(libcamera::Request *request)
 {
     //Chech that request finished succesfully
     if (request->status() == libcamera::Request::RequestCancelled)
@@ -161,7 +160,7 @@ void CameraManager::requestComplete(libcamera::Request *request)
     //Get the display buffer
 
 
-    frameCount++;
+    CameraManager::_frameCount++;
     request->reuse(libcamera::Request::ReuseBuffers);
     CameraManager::_camera->queueRequest(request);
     
